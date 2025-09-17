@@ -35,10 +35,7 @@ mongoose
 const app = express();
 const PORT = process.env.PORT || 10000;
 
-// Serve static files from client build
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/dist')));
-}
+
 
 app.use(
   cors({
@@ -78,12 +75,10 @@ app.use("/api/shop/review", shopReviewRouter);
 
 app.use("/api/common/feature", commonFeatureRouter);
 
-// Catch all handler for React Router
-if (process.env.NODE_ENV === 'production') {
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
-  });
-}
+// API health check
+app.get('/', (req, res) => {
+  res.json({ message: 'MERN Ecommerce API is running!' });
+});
 
 app.listen(PORT, () => {
   console.log(`🚀 Server is running on port ${PORT}`);
