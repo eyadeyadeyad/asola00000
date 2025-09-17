@@ -138,7 +138,7 @@ function ShoppingCheckout() {
           <div className="mt-8 space-y-4">
             <div className="flex justify-between">
               <span className="font-bold">الإجمالي</span>
-              <span className="font-bold">${totalCartAmount}</span>
+              <span className="font-bold">{totalCartAmount} د.ل</span>
             </div>
           </div>
           <div className="mt-4 w-full">
