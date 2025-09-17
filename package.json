@@ -8,6 +8,6 @@
     "install-client": "cd client && npm install"
   },
   "engines": {
-    "node": "18.x"
+    "node": "22.x"
   }
 }
